@@ -1,0 +1,17 @@
+FROM node:12
+
+WORKDIR /opt/
+
+# Angular frontend
+RUN git clone https://github.com/gothinkster/angular-realworld-example-app.git && \
+    cd angular-realworld-example-app && \
+    sed -i 's|https://conduit.productionready.io/api|/api|' src/environments/environment.prod.ts && \
+    yarn && \
+    yarn build
+
+# Simple webserver with configured proxy
+FROM caddy
+
+COPY --from=0 /opt/angular-realworld-example-app/dist /usr/share/caddy
+
+COPY ./Caddyfile /etc/caddy/Caddyfile

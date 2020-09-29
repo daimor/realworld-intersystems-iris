@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: .
+    init: true
+    volumes:
+      - ./:/home/irisowner/repo
+    ports:
+      - 12000:52773
+  web:
+    build:
+      context: web
+      dockerfile: Dockerfile-${web:-vue}
+    ports:
+      - 80:80

@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "conduit",
+      "path": "."
+    },
+  ],
+  "extensions": {
+    "recommendations": [
+      "intersystems-community.vscode-objectscript"
+    ]
+  },
+  "settings": {
+    "objectscript.export.addCategory": false
+  }
+}

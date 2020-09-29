@@ -1,0 +1,8 @@
+:80
+root * /usr/share/caddy
+file_server
+
+route /api/* {
+  uri replace /api/ /conduit/
+  reverse_proxy server:52773
+}

@@ -1,0 +1,17 @@
+FROM node:12
+
+WORKDIR /opt/
+
+# Vue frontend
+RUN git clone https://github.com/gothinkster/vue-realworld-example-app.git && \
+    cd /opt/vue-realworld-example-app && \
+    sed -i 's|https://conduit.productionready.io/api|/api|' src/common/config.js && \
+    yarn && \
+    yarn build
+
+# Simple webserver with configured proxy
+FROM caddy
+
+COPY --from=0 /opt/vue-realworld-example-app/dist /usr/share/caddy
+
+COPY ./Caddyfile /etc/caddy/Caddyfile
