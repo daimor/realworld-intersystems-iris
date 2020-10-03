@@ -1,28 +1,20 @@
 {
   "name": "IRIS RealWorld example",
   "dockerComposeFile": [
-    "../docker-compose.yml"
+    "../docker-compose.yml",
+    "docker-compose.yml"
   ],
   "service": "server",
+  "shutdownAction": "none",
   "extensions": [
     "intersystems-community.vscode-objectscript"
   ],
   "forwardPorts": [
-    52773
+    52773,
+    80
   ],
-  "workspaceFolder": "/home/irisowner/repo",
+  "workspaceFolder": "/workspace",
   "settings": {
-    "objectscript.conn": {
-      "active": true,
-      "host": "localhost",
-      "port": 52773,
-      "ns": "CONDUIT",
-      "username": "demo",
-      "password": "demo",
-      "links": {
-        "Conduit APP": "http://localhost/",
-        "Conduit API": "http://${host}:${port}/conduit/"
-      }
-    }
+    "terminal.integrated.shell.linux": "/bin/bash",
   }
 }
