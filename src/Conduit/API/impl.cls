@@ -114,7 +114,7 @@ ClassMethod Process404() As %DynamicAbstractObject
 {
   Do ..%SetStatusCode(404)
   Quit {
-    "status": "404",
+    "status": 404,
     "error": "Not Found"
   }
 }
