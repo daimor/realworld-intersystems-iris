@@ -6,7 +6,8 @@ services:
       context: .
     init: true
     volumes:
-      - ./:/home/irisowner/repo
+      - db:/home/irisowner/conduit/db
+      - ./:/home/irisowner/conduit
     ports:
       - 12000:52773
   web:
@@ -15,3 +16,5 @@ services:
       dockerfile: Dockerfile-${web:-vue}
     ports:
       - 80:80
+volumes:
+  db:

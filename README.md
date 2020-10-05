@@ -69,12 +69,19 @@ Open URL http://localhost/
 ## Testing
 
 
-Run Postman/newman tests for REST API
+Run Postman/newman tests for REST API. Requires `npm` and `npx` package installed (`npm i -g npx`)
 
 ```
 APIURL=http://localhost:12000/conduit ./run-api-tests.sh
 ```
 
+Run UnitTests with ZPM
+
+```
+$ docker-compose exec server iris session iris
+
+CONDUIT> zpm "test realworld -v"
+```
 
 ## Testing with different frontend
 

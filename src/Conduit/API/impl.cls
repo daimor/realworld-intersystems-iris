@@ -150,11 +150,11 @@ ClassMethod CreateUser(body As %DynamicObject) As %DynamicObject
     Set user = ##class(Conduit.Model.User).%New()
     $$$ThrowOnError(user.%JSONImport(body))
     $$$ThrowOnError(user.%Save())
-    Return ..outputObject("user", user, "User")
   }
   Catch (ex) {
     Return ..ProcessError(ex)
   }
+  Return ..outputObject("user", user, "User")
 }
 
 /// Gets the currently logged-in user
@@ -336,6 +336,8 @@ ClassMethod CreateArticle(body As %DynamicObject) As %DynamicObject
 ///     slug, Slug of the article to get<br/>
 ClassMethod GetArticle(slug As %String) As %DynamicObject
 {
+  Set slug = $Get(slug, "")
+
   If '..IsAuthorized(.user, 1) {
     Quit ..Process401()
   }
