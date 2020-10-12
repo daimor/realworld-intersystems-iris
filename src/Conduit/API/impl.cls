@@ -81,19 +81,19 @@ ClassMethod ProcessError(ex As %Exception.AbstractException) As %DynamicObject
     Set errors = ex
   }
   ElseIf (ex.Code=9405) {
-    Set field = $Listget(ex.Data)
+    Set field = $ListGet(ex.Data)
     Set $Property(errors, field) = [ "can't be blank" ]
   }
   ElseIf (ex.Code=9406) {
-    Set field = $Listget(ex.Data)
+    Set field = $ListGet(ex.Data)
     Set $Property(errors, field) = [ "is too long" ]
   }
   ElseIf (ex.Code=5808) {
-    Set field = $Piece($Listget(ex.Data), ":", 2)
+    Set field = $Piece($ListGet(ex.Data), ":", 2)
     Set $Property(errors, field) = [ "has already been taken" ]
   }
   ElseIf (ex.%IsA("%Exception.StatusException")) {
-    Set field = $Listget(ex.Data)
+    Set field = $ListGet(ex.Data)
     Set:field="" field = "body"
     Set $Property(errors, field) = [ (ex.DisplayString()) ]
   }
@@ -227,7 +227,7 @@ ClassMethod FollowUserByUsername(username As %String) As %DynamicObject
     Quit ..Process404()
   }
 
-  try {
+  Try {
     Set user.following = 1
     $$$ThrowOnError(user.%Save())
   }
@@ -252,7 +252,7 @@ ClassMethod UnfollowUserByUsername(username As %String) As %DynamicObject
     Quit ..Process404()
   }
 
-  try {
+  Try {
     Set user.following = 0
     $$$ThrowOnError(user.%Save())
   }
@@ -299,7 +299,7 @@ ClassMethod GetArticles(tag As %String, author As %String, favorited As %String,
     Quit ..Process401()
   }
 
-  try {
+  Try {
     Set rs = ##class(Conduit.Model.Article).AllFunc(tag, author, favorited)
     Return ..outputSQL(rs, "articles", "Conduit.Model.Article", "Article", limit, offset)
   }
@@ -472,7 +472,7 @@ ClassMethod DeleteArticleComment(slug As %String, id As %Integer) As %DynamicObj
     Quit ..Process404()
   }
 
-  try {
+  Try {
     $$$ThrowOnError(##class(Conduit.Model.Comment).%DeleteId(id))
   }
   Catch ex {

@@ -159,7 +159,7 @@ ClassMethod GetJWK(alg) As %String
   Quit jwks.%ToJSON()
 }
 
-XData Update
+XData Update [ XMLNamespace = "http://www.intersystems.com/jsonmapping" ]
 {
 <Mapping xmlns="http://www.intersystems.com/jsonmapping">
   <Property Name="email" />
@@ -169,7 +169,7 @@ XData Update
 </Mapping>
 }
 
-XData User
+XData User [ XMLNamespace = "http://www.intersystems.com/jsonmapping" ]
 {
 <Mapping xmlns="http://www.intersystems.com/jsonmapping">
   <Property Name="id" />
@@ -183,7 +183,7 @@ XData User
 </Mapping>
 }
 
-XData Profile
+XData Profile [ XMLNamespace = "http://www.intersystems.com/jsonmapping" ]
 {
 <Mapping xmlns="http://www.intersystems.com/jsonmapping">
   <Property Name="username" />

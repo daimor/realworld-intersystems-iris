@@ -54,7 +54,7 @@ Method favoritedGet() As %Boolean
   SELECT count(*) INTO :yes
   FROM Conduit_Model.Favorites
   WHERE "User" = :userId AND favorites = :articleId)
-  if SQLCODE'=0 Quit 0
+  If SQLCODE'=0 Quit 0
 
   Quit yes
 }
@@ -72,7 +72,7 @@ Method favoritedSet(value As %Boolean) As %Status
   }
 
   If value {
-    Do %user.favorites.Insert($this)
+    Do %user.favorites.Insert($This)
   }
   Else {
     Set ind = %user.favorites.FindObjectId(articleId)
@@ -94,7 +94,7 @@ Method favoritesCountGet() As %Integer
   SELECT COUNT(DISTINCT "User") INTO :count
   FROM Conduit_Model.Favorites
   WHERE favorites = :articleId)
-  if SQLCODE'=0 Quit 0
+  If SQLCODE'=0 Quit 0
 
   Quit count
 }
@@ -168,7 +168,7 @@ SELECT DISTINCT %EXACT(tagList) tag FROM Conduit_Model.Article_tagList
 }
 
 /// JSON export
-XData Article
+XData Article [ XMLNamespace = "http://www.intersystems.com/jsonmapping" ]
 {
 <Mapping xmlns="http://www.intersystems.com/jsonmapping">
   <Property Name="title" />

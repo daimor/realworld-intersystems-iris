@@ -9,7 +9,7 @@ Property author As Conduit.Model.User(%JSONINCLUDE = "OUTPUTONLY");
 
 Relationship article As Conduit.Model.Article [ Cardinality = one, Inverse = comment, OnDelete = cascade ];
 
-XData Comment
+XData Comment [ XMLNamespace = "http://www.intersystems.com/jsonmapping" ]
 {
 <Mapping xmlns="http://www.intersystems.com/jsonmapping">
   <Property Name="id" />
