@@ -1,5 +1,5 @@
 # FROM containers.intersystems.com/intersystems/iris-community:2020.3.0.200.0
-FROM intersystemsdc/iris-community:2020.3.0.200.0-zpm
+FROM intersystemsdc/iris-community:2020.3.0.211.0-zpm
 
 COPY --chown=irisowner:irisowner . /home/irisowner/conduit/
 
