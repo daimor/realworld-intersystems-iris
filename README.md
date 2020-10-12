@@ -1,3 +1,6 @@
+![CI](https://github.com/daimor/realworld-intersystems-iris/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/daimor/realworld-intersystems-iris/branch/master/graph/badge.svg)](https://codecov.io/gh/daimor/realworld-intersystems-iris)
+
+
 # ![RealWorld Example App](https://raw.githubusercontent.com/daimor/realworld-intersystems-iris/master/logo.png)
 
 > ### InterSystems IRIS codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
