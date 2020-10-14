@@ -9,6 +9,10 @@
   "extensions": [
     "intersystems-community.vscode-objectscript"
   ],
+  "runServices": [
+    "web",
+    "server"
+  ],
   "forwardPorts": [
     52773,
     80
@@ -16,5 +20,6 @@
   "workspaceFolder": "/workspace",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
+    "objectscript.ignoreInstallServerManager": true
   }
 }
