@@ -6,3 +6,4 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace:cached
+    network_mode: service:server

@@ -19,7 +19,7 @@
   ],
   "workspaceFolder": "/workspace",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shell.linux": "/bin/zsh",
     "objectscript.ignoreInstallServerManager": true
   }
 }
