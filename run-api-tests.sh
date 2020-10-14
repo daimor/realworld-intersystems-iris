@@ -4,7 +4,7 @@ set -x
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 # APIURL=${APIURL:-https://conduit.productionready.io/api}
-APIURL=${APIURL:-http://localhost:12000/conduit}
+APIURL=${APIURL:-http://localhost:52773/conduit}
 USERNAME=${USERNAME:-u`date +%s`}
 EMAIL=${EMAIL:-$USERNAME@mail.com}
 PASSWORD=${PASSWORD:-password}

@@ -6,4 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace:cached
+    command: sleep infinity
     network_mode: service:server
+  web:
+    network_mode: service:server
+

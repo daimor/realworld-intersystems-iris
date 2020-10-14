@@ -7,19 +7,28 @@
   "service": "dev",
   "shutdownAction": "none",
   "extensions": [
-    "intersystems-community.vscode-objectscript"
-  ],
-  "runServices": [
-    "web",
-    "server"
+    "intersystems-community.vscode-objectscript",
+    "intersystems.language-server"
   ],
   "forwardPorts": [
-    52773,
-    80
+    80,
+    52773
   ],
   "workspaceFolder": "/workspace",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/zsh",
-    "objectscript.ignoreInstallServerManager": true
+    "objectscript.ignoreInstallServerManager": true,
+    "objectscript.conn": {
+      "active": true,
+      "host": "localhost",
+      "port": 52773,
+      "ns": "CONDUIT",
+      "username": "demo",
+      "password": "demo",
+      "links": {
+        "Conduit APP": "http://localhost:80/",
+        "Conduit API": "http://${host}:${port}/conduit/"
+      }
+    }
   }
 }
