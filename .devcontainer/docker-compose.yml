@@ -1,5 +1,8 @@
-version: '3'
+version: '3.7'
 services:
-  server:
+  dev:
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
     volumes:
       - .:/workspace:cached

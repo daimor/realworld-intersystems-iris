@@ -4,7 +4,7 @@
     "../docker-compose.yml",
     "docker-compose.yml"
   ],
-  "service": "server",
+  "service": "dev",
   "shutdownAction": "none",
   "extensions": [
     "intersystems-community.vscode-objectscript"
