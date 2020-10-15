@@ -1,13 +1,20 @@
 version: '3.7'
 services:
-  dev:
+  server:
     build:
-      context: .devcontainer
-      dockerfile: Dockerfile
+      context: ..
+      args:
+        - DEVCONTAINER=true
+    init: true
+    entrypoint: sleep
+    command: infinity
     volumes:
-      - .:/workspace:cached
-    command: sleep infinity
-    network_mode: service:server
+      - db:/home/irisowner/conduit/db
+      - ..:/home/irisowner/conduit:cached
   web:
+    build:
+      context: ../web
+      dockerfile: Dockerfile-${web:-vue}
     network_mode: service:server
-
+volumes:
+  db:
