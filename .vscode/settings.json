@@ -1,15 +1,2 @@
 {
-  "objectscript.conn": {
-    "active": true,
-    "ns": "CONDUIT",
-    "username": "demo",
-    "password": "demo",
-    "links": {
-      "Conduit APP": "http://localhost/",
-      "Conduit API": "http://${host}:${port}/conduit/"
-    },
-    "docker-compose": {
-      "service": "server"
-    }
-  },
 }
