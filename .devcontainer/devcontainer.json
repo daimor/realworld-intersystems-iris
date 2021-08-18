@@ -3,8 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "server",
   "extensions": [
-    "intersystems-community.vscode-objectscript",
-    "intersystems.language-server"
+    "intersystems-community.vscode-objectscript"
   ],
   "forwardPorts": [
     80,
@@ -28,8 +27,8 @@
     "intersystems.servers": {
       "/ignore": true
     },
-    "intersystems.language-server.suggestTheme": false,
-    "workbench.colorTheme": "InterSystems Default Light",
+    "objectscript.ignoreInstallServerManager": true,
+    "objectscript.ignoreInstallLanguageServer": true,
     "objectscript.conn": {
       "active": true,
       "host": "localhost",
