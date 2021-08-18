@@ -1,8 +1,10 @@
 # FROM containers.intersystems.com/intersystems/iris-community:2020.3.0.200.0
 FROM intersystemsdc/iris-community:latest
 
-# # ready to be as a devcontainer
-# ARG DEVCONTAINER="false"
+SHELL ["/bin/bash", "-c"]
+
+# ready to be as a devcontainer
+ARG DEVCONTAINER="false"
 # USER root
 # RUN [ "$DEVCONTAINER" != "true" ] && exit; \
 #   apt-get update && export DEBIAN_FRONTEND=noninteractive && \
@@ -26,12 +28,13 @@ FROM intersystemsdc/iris-community:latest
 #   && \
 #   apt-get clean -y && rm -rf /var/lib/apt/lists/*
 # USER ${ISC_PACKAGE_MGRUSER}
-# RUN [ "$DEVCONTAINER" != "true" ] && exit; \
-#   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
-#   source $HOME/.nvm/nvm.sh && nvm install 12 && \
-#   npm i -g newman
 
-# # end devcontainer
+RUN [ "$DEVCONTAINER" != "true" ] && exit || \
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && \
+  source $HOME/.nvm/nvm.sh && nvm install 12 && \
+  npm i -g newman
+
+# end devcontainer
 
 COPY --chown=irisowner:irisowner . /home/irisowner/conduit/
 
