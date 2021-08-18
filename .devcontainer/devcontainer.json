@@ -14,7 +14,7 @@
   "remoteUser": "irisowner",
   "postCreateCommand": "iris start iris",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.defaultProfile.linux": "bash",
     "objectscript.ignoreInstallServerManager": true,
     "objectscript.conn": {
       "active": true,
