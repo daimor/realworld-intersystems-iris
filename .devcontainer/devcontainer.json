@@ -15,7 +15,21 @@
   "postCreateCommand": "iris start iris",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash",
-    "objectscript.ignoreInstallServerManager": true,
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "icon": "terminal-bash"
+      },
+      "iris": {
+        "path": "iris",
+        "args": ["session", "iris"]
+      }
+    },
+    "intersystems.servers": {
+      "/ignore": true
+    },
+    "intersystems.language-server.suggestTheme": false,
+    "workbench.colorTheme": "InterSystems Default Light",
     "objectscript.conn": {
       "active": true,
       "host": "localhost",
