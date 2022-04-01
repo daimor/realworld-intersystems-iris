@@ -3,7 +3,8 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "server",
   "extensions": [
-    "intersystems-community.vscode-objectscript"
+    "intersystems-community.vscode-objectscript",
+    "intersystems.language-server"
   ],
   "forwardPorts": [
     80,
