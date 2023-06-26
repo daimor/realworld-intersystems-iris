@@ -8,7 +8,7 @@
       <Keywords>REST,Full-stack,vue,angular,react</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Directory="cls" Name="Conduit.PKG"/>
+      <Resource Name="Conduit.PKG"/>
       <CSPApplication CookiePath="/conduit/" DefaultTimeout="900" DispatchClass="Conduit.API.disp" MatchRoles=":${dbrole}" PasswordAuthEnabled="0" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/conduit" UseSessionCookie="2"/>
       <UnitTest Name="/tests" Package="UnitTest" Phase="test"/>
     </Module>

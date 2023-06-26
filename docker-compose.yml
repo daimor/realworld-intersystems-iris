@@ -2,19 +2,19 @@ version: '3.7'
 
 services:
   server:
-    build:
-      context: .
-    init: true
+    env_file:
+      - .env
+    image: intersystemsdc/iris-community:latest
     ports:
       - 52773
+    user: "51773"
     volumes:
-      - db:/home/irisowner/conduit/db
+      - ./init.db:/docker-entrypoint-initdb.d/
       - ./:/home/irisowner/conduit
+      - ./db:/usr/irissys/mgr/CONDUIT
   web:
     build:
       context: web
       dockerfile: Dockerfile-${web:-vue}
     ports:
       - 80:80
-volumes:
-  db:
