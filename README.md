@@ -75,7 +75,7 @@ Open URL http://localhost/
 Run Postman/newman tests for REST API. Requires `npm` and `npx` package installed (`npm i -g npx`)
 
 ```
-APIURL=http://localhost:12000/conduit ./run-api-tests.sh
+APIURL=http://localhost/api ./run-api-tests.sh
 ```
 
 Run UnitTests with ZPM
