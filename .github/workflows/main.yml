@@ -15,7 +15,7 @@ jobs:
     env:
       # ** FOR GENERAL USE, LIKELY NEED TO CHANGE: **
       package: realworld
-      container_image: intersystemsdc/iris-community:2020.3.0.221.0-zpm
+      container_image: intersystemsdc/iris-community
 
       # ** FOR GENERAL USE, MAY NEED TO CHANGE: **
       build_flags: -dev -verbose # Load in -dev mode to get unit test code preloaded
@@ -35,10 +35,10 @@ jobs:
     steps:
 
     # Checks out this repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Also need to check out timleavitt/forgery until the official version installable via ZPM
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         repository: timleavitt/forgery
         path: forgery
@@ -89,7 +89,7 @@ jobs:
         # all tests passed.
         fail: false
     - name: Attach the report
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       if: always()
       with:
         name: ${{ steps.xunit-viewer.outputs.report-name }}
