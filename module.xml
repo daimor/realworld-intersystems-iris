@@ -9,7 +9,7 @@
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="Conduit.PKG"/>
-      <CSPApplication CookiePath="/conduit/" DefaultTimeout="900" DispatchClass="Conduit.API.disp" MatchRoles=":${dbrole}" PasswordAuthEnabled="0" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/conduit" UseSessionCookie="2"/>
+      <WebApplication CookiePath="/conduit/" DefaultTimeout="900" DispatchClass="Conduit.API.disp" MatchRoles=":{$globalsDbRole}" PasswordAuthEnabled="0" Recurse="1" ServeFiles="1" ServeFilesTimeout="3600" UnauthenticatedEnabled="1" Url="/conduit" UseSessionCookie="2"/>
       <UnitTest Name="/tests" Package="UnitTest" Phase="test"/>
     </Module>
   </Document>
