@@ -35,10 +35,10 @@ jobs:
     steps:
 
     # Checks out this repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
 
     # Also need to check out timleavitt/forgery until the official version installable via ZPM
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
       with:
         repository: timleavitt/forgery
         path: forgery
@@ -89,7 +89,7 @@ jobs:
         # all tests passed.
         fail: false
     - name: Attach the report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: ${{ steps.xunit-viewer.outputs.report-name }}
